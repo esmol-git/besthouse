@@ -1,0 +1,23 @@
+// Colors
+$black: #0f0f0f;
+$white: #ffffff;
+$darkGray: #1c1d1e;
+$gray: #3d3d3d;
+$orange: #ff7a00;
+
+// Fonts
+$mainFont: "Montserrat", sans-serif;
+$robotoFonts: "Roboto", sans-serif;
+
+//Main vars
+$minWidth: 320;
+$maxWidthContainer: 1230;
+$containerPadding: 30;
+// Ширина срабатывания первого брейкпоинта
+$containerWidth: $maxWidthContainer + $containerPadding;
+$responsiveType: 1;
+// Брейк-поинты
+$pc: em($containerWidth); // ПК, ноутбуки, некоторые планшеты в горизонтальном положении
+$tablet: em(991.98); // Планшеты, некоторые телефоны в горизонтальном положении
+$mobile: em(767.98); // Телефоны L
+$mobileSmall: em(479.98); // Телефоны S
