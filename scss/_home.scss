@@ -3,16 +3,22 @@
     margin: 0 auto;
     overflow: hidden;
 }
+
 .header {
     font-weight: 500;
-    font-size: 16px;
-    line-height: 20px;
+    font-size: rem(16);
+    line-height: math.div(20, 16);
     letter-spacing: 0.05em;
-    padding: 12px 0 8px;
+    padding: 12px 0px 8px 0px;
+
     &__container {
         display: flex;
         justify-content: space-between;
         align-items: center;
+    }
+    &__logo {
+        @include adaptiveValue("width", 186, 80, 1200, 320);
+        flex-shrink: 0;
     }
     &__left {
         display: flex;
@@ -25,7 +31,7 @@
         text-align: center;
     }
 
-    &__contact-phone {
+    &__contact-background {
         color: $white;
     }
 
@@ -33,6 +39,12 @@
         color: $orange;
     }
 }
+
+.burger {
+    @include burger;
+    display: none;
+}
+
 .nav {
     &__list {
         display: flex;
@@ -49,9 +61,9 @@
         }
     }
 }
-.hero {
-    margin-bottom: 96px;
 
+.hero {
+    margin-bottom: rem(96);
     &__wrapper {
         position: relative;
         max-width: 1440px;
@@ -84,7 +96,7 @@
     &__title {
         font-family: $robotoFonts;
         font-size: 60px;
-        line-height: 70px;
+        line-height: math.div(70, 60);
         max-width: 531px;
     }
 
@@ -146,10 +158,13 @@
         }
     }
 }
+
 .work {
     position: relative;
     min-height: 500px;
     background-image: url(../images/work-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
     z-index: 1;
     color: $white;
     padding: 50px 0;
@@ -165,6 +180,8 @@
     }
 
     &__items {
+        @include adaptiveValue("column-gap", 130, 30);
+        @include adaptiveValue("row-gap", 56, 30);
         margin-top: 45px;
         display: grid;
         row-gap: 56px;
@@ -180,25 +197,26 @@
         position: relative;
         padding: 15px 15px 15px 99px;
         &::before {
+            @include adaptiveValue("font-size", 60, 30);
+            @include adaptiveValue("line-height", 73, 40);
             content: "0" counter(count);
             counter-increment: count;
             position: absolute;
             left: 0;
             top: 50%;
             transform: translateY(-50%);
-            font-size: 60px;
-            line-height: 73px;
             letter-spacing: 0.05em;
             color: rgba($orange, 0.5);
         }
     }
 
     &__item-text {
-        font-size: 18px;
+        @include adaptiveValue("font-size", 18, 14);
         line-height: 22px;
         letter-spacing: 0.05em;
     }
 }
+
 .service {
     padding: 72px 0 111px 0;
     &__container {
@@ -212,43 +230,116 @@
     }
 
     &__text {
-        font-size: 22px;
-        line-height: 27px;
+        @include adaptiveValue("font-size", 22, 16);
+        line-height: math.div(27, 22);
         text-align: justify;
         letter-spacing: 0.05em;
         margin-top: 75px;
     }
 
     &__banner {
-        font-size: 30px;
-        line-height: 37px;
+        @include adaptiveValue("font-size", 30, 20);
+        line-height: math.div(37, 30);
         color: $orange;
         margin-top: 51px;
         text-align: center;
     }
+
     .tabs {
         &__navigation {
+            max-width: 386px;
+            width: 100%;
             display: grid;
             gap: 15px;
-            width: 386px;
         }
 
         &__title {
+            @include adaptiveValue("font-size", 22, 14);
+            cursor: pointer;
             border: 4px solid $orange;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            line-height: 27px;
+            letter-spacing: 0.05em;
+            span {
+                display: block;
+                max-width: 200px;
+                text-align: center;
+            }
             &._tab-active {
                 color: $orange;
+                &.background::after {
+                    background-color: rgba(0, 0, 0, 0.85);
+                }
             }
         }
 
         &__content {
             width: 100%;
+            min-width: 400px;
             border: 4px solid $orange;
         }
 
         &__body {
+            height: 100%;
+            position: relative;
+            padding: 85px 10px 20px 100px;
+            &-title {
+                font-size: 24px;
+                line-height: 29px;
+                letter-spacing: 0.05em;
+                color: $orange;
+                text-align: center;
+            }
+            &-list {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+                height: 600px;
+                overflow-y: auto;
+            }
+            &-item {
+                font-size: 18px;
+                line-height: 22px;
+                letter-spacing: 0.05em;
+            }
+        }
+    }
+    .background {
+        position: relative;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: 1;
+
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.66);
+
+            z-index: -1;
+        }
+        &--1 {
+            background-image: url("../images/service/img-1.jpg");
+        }
+        &--2 {
+            background-image: url("../images/service/img-2.jpg");
+        }
+        &--3 {
+            background-image: url("../images/service/img-3.jpg");
+        }
+        &--4 {
+            background-image: url("../images/service/img-1.jpg");
         }
     }
 }
+
 .connection {
     background-image: url("../images/connection-bg.jpg");
     background-size: contain;
@@ -295,6 +386,7 @@
         max-width: 390px;
     }
 }
+
 .about {
     position: relative;
     background-image: url("../images/about-bg.jpg");
@@ -379,6 +471,7 @@
         }
     }
 }
+
 .gallery {
     padding-bottom: 60px;
     &__container {
@@ -436,6 +529,7 @@
         }
     }
 }
+
 .price {
     padding: 55px 0;
     &-tabs {
@@ -526,6 +620,7 @@
         border-right: none;
     }
 }
+
 .footer {
     background-color: #0a0a0a;
     padding: 40px 0 16px;
@@ -549,8 +644,8 @@
         color: $white;
     }
 
-    &__item--phone {
-        background-image: url("../images/icons/phone.svg");
+    &__item--background {
+        background-image: url("../images/icons/background.svg");
         background-repeat: no-repeat;
         background-size: contain;
         padding-left: 30px;

@@ -1,0 +1,94 @@
+@media (max-width: $pc) {
+    .hero {
+        @include adaptiveValue("margin-bottom", 96, 24);
+        &__title {
+            @include adaptiveValue("font-size", 60, 34);
+        }
+        &__descr {
+            @include adaptiveValue("font-size", 22, 14);
+        }
+        &__container {
+            &:after {
+                @include adaptiveValue("right", -10, -850);
+            }
+        }
+    }
+    .service {
+    }
+}
+
+@media (max-width: $tablet) {
+    .nav {
+        display: none;
+    }
+    .burger {
+        display: block;
+    }
+    .service {
+        &__tabs {
+            @include adaptiveValue("height", 750, 450);
+        }
+        &__text {
+            @include adaptiveValue("margin-top", 75, 40);
+        }
+        &__banner {
+            @include adaptiveValue("margin-top", 51, 25);
+        }
+    }
+}
+@media (max-width: em(900)) {
+    .hero {
+        &__container {
+            height: auto;
+            &:after {
+                display: none;
+            }
+        }
+        &__slider {
+            display: none;
+        }
+        &__main {
+            @include adaptiveValue("gap", 50, 20);
+            width: 100%;
+            align-items: center;
+            text-align: center;
+            padding: 20px 0;
+        }
+    }
+}
+@media (max-width: $mobile) {
+    .header {
+        padding: 5px 0;
+        &__contact {
+            font-size: 10px;
+        }
+    }
+    .work {
+        &__items {
+            grid-template-columns: repeat(1, 1fr);
+            justify-content: center;
+            padding: 0;
+        }
+        &__item {
+            padding-left: 70px;
+        }
+    }
+}
+@media (max-width: em(600)) {
+    .service {
+        &__tabs {
+            @include adaptiveValue("padding-right", 40, 0);
+            @include adaptiveValue("padding-left", 40, 0);
+            flex-direction: column;
+        }
+        .tabs {
+            &__navigation {
+                max-width: 100%;
+            }
+            &__content {
+                height: 100%;
+                min-width: 100%;
+            }
+        }
+    }
+}

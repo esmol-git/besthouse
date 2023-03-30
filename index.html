@@ -39,13 +39,21 @@
                     <div class="header__contact">
                         <a
                             href="tel:+375251234567"
-                            class="header__contact-phone"
+                            class="header__contact-background"
                             >+375 (25) 123-45-67</a
                         >
                         <a href="#" class="header__contact-link"
                             >Заказать звонок</a
                         >
                     </div>
+                    <button
+                        class="burger"
+                        aria-label="Открыть меню"
+                        aria-expanded="false"
+                        data-burger
+                    >
+                        <span class="burger__line"></span>
+                    </button>
                 </div>
             </header>
             <!--Header end-->
@@ -164,33 +172,82 @@
                     </div>
                     <div data-tabs class="service__tabs">
                         <nav data-tabs-titles class="tabs__navigation">
-                            <button
-                                type="button"
-                                class="tabs__title _tab-active"
+                            <div
+                                class="tabs__title _tab-active background background--1"
                             >
-                                Таб №1
-                            </button>
-                            <button type="button" class="tabs__title">
-                                Таб №2
-                            </button>
-                            <button type="button" class="tabs__title">
-                                Таб №3
-                            </button>
-                            <button type="button" class="tabs__title">
-                                Таб №4
-                            </button>
+                                <span>Отделочные работы</span>
+                            </div>
+                            <div class="tabs__title background background--2">
+                                <span> Строительство домов</span>
+                            </div>
+                            <div class="tabs__title background background--3">
+                                <span>Электрика</span>
+                            </div>
+                            <div class="tabs__title background background--4">
+                                <span>Сантехника</span>
+                            </div>
                         </nav>
                         <div data-tabs-body class="tabs__content">
-                            <div class="tabs__body">
-                                Содержимое первого таба
+                            <div class="tabs__body background background--1">
+                                <h4 class="tabs__body-title">
+                                    Отделочные работы
+                                </h4>
+                                <ul class="tabs__body-list">
+                                    <li class="tabs__body-item">
+                                        Перенос и установка счетчиков
+                                    </li>
+                                    <li class="tabs__body-item">
+                                        Монтаж и ремонт водопровода
+                                    </li>
+                                    <li class="tabs__body-item">
+                                        Монтаж отопления
+                                    </li>
+                                    <li class="tabs__body-item">
+                                        Монтаж канализации
+                                    </li>
+                                    <li class="tabs__body-item">
+                                        Замена и перенос полотенцесушителя
+                                    </li>
+                                    <li class="tabs__body-item">
+                                        Установка кранов на полотенцесушитель
+                                    </li>
+                                    <li class="tabs__body-item">
+                                        Установка инсталляций
+                                    </li>
+                                    <li class="tabs__body-item">
+                                        Установка всех видов сантех оборудования
+                                    </li>
+                                    <li class="tabs__body-item">
+                                        Замена батарей отопления
+                                    </li>
+                                    <li class="tabs__body-item">
+                                        Замена и демонтаж радиатора отопления
+                                    </li>
+                                    <li class="tabs__body-item">
+                                        Замена труб в ванной и туалете
+                                    </li>
+                                    <li class="tabs__body-item">
+                                        Замена труб в ванной
+                                    </li>
+                                    <li class="tabs__body-item">
+                                        Замена труб на пластиковые
+                                    </li>
+                                    <li class="tabs__body-item">
+                                        Монтаж трубопроводов ПВХ
+                                    </li>
+                                </ul>
                             </div>
-                            <div class="tabs__body">
-                                Содержимое второго таба
+                            <div class="tabs__body background background--2">
+                                <h4 class="tabs__body-title">
+                                    Строительство домов
+                                </h4>
                             </div>
-                            <div class="tabs__body">
-                                Содержимое третьего таба
+                            <div class="tabs__body background background--3">
+                                <h4 class="tabs__body-title">Электрика</h4>
                             </div>
-                            <div class="tabs__body">Содержимое 4 таба</div>
+                            <div class="tabs__body background background--4">
+                                <h4 class="tabs__body-title">Сантехника</h4>
+                            </div>
                         </div>
                     </div>
                     <p class="service__text">
@@ -831,7 +888,7 @@
                         <div class="footer__main-left">
                             <a
                                 href="tel:+375291234567"
-                                class="footer__item footer__item--phone"
+                                class="footer__item footer__item--background"
                                 >+ 375-29-123-45-67</a
                             >
                             <a

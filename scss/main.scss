@@ -1,8 +1,11 @@
+@use "sass:math";
+
 @import "_reset";
-@import "_vars";
 @import "_mixins";
+@import "_vars";
 @import "_style";
 @import "_home";
 @import "_buttons";
 @import "_swiper";
 @import "_form";
+@import "_media";
