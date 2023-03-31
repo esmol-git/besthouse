@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
-        <link rel="stylesheet" href="css/main.css" />
-    </head>
 
-    <body>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <div class="wrapper">
         <div class="site">
             <!--Header-->
-            <header class="header">
+            <header class="header" data-scroll="120" data-scroll-show>
                 <div class="header__container">
                     <div class="header__left">
                         <a href="#" class="header__logo">
-                            <img src="./images/logo.svg" alt="Логотип" />
+                            <img src="./images/logo.svg" alt="Логотип">
                         </a>
                         <nav class="header__nav nav">
                             <ul class="nav__list">
                                 <li class="nav__item">
-                                    <a href="#" class="nav__link is-active"
-                                        >Портфолио</a
-                                    >
+                                    <a href="#" class="nav__link is-active">Портфолио</a>
                                 </li>
                                 <li class="nav__item">
                                     <a href="#" class="nav__link">Услуги</a>
@@ -37,23 +37,10 @@
                         </nav>
                     </div>
                     <div class="header__contact">
-                        <a
-                            href="tel:+375251234567"
-                            class="header__contact-background"
-                            >+375 (25) 123-45-67</a
-                        >
-                        <a href="#" class="header__contact-link"
-                            >Заказать звонок</a
-                        >
+                        <a href="tel:+375251234567" class="header__contact-background">+375 (25) 123-45-67</a>
+                        <a href="#" class="header__contact-link">Заказать звонок</a>
                     </div>
-                    <button
-                        class="burger"
-                        aria-label="Открыть меню"
-                        aria-expanded="false"
-                        data-burger
-                    >
-                        <span class="burger__line"></span>
-                    </button>
+                    <button type="button" class="menu__icon icon-menu"><span></span></button>
                 </div>
             </header>
             <!--Header end-->
@@ -63,14 +50,13 @@
                     <div class="hero__container">
                         <div class="hero__main">
                             <h1 class="hero__title">
-                                Строительство <br />
+                                Строительство <br>
                                 и ремонт в Гомеле
                             </h1>
                             <p class="hero__descr">
                                 Надежное будущее строим вместе
                             </p>
-                            <a href="#" class="button hero__button"
-                                >Получить консультацию
+                            <a href="#" class="button hero__button">Получить консультацию
                             </a>
                         </div>
                         <div class="hero__slider swiper">
@@ -78,48 +64,27 @@
                             <div class="swiper-wrapper">
                                 <!-- Slides -->
                                 <div class="hero__slide swiper-slide">
-                                    <img
-                                        src="./images/slider/img-1.jpg"
-                                        alt=""
-                                    />
+                                    <img src="./images/slider/img-1.jpg" alt="">
                                 </div>
                                 <div class="hero__slide swiper-slide">
-                                    <img
-                                        src="./images/slider/img-2.jpg"
-                                        alt=""
-                                    />
+                                    <img src="./images/slider/img-2.jpg" alt="">
                                 </div>
                                 <div class="hero__slide swiper-slide">
-                                    <img
-                                        src="./images/slider/img-3.jpg"
-                                        alt=""
-                                    />
+                                    <img src="./images/slider/img-3.jpg" alt="">
                                 </div>
                                 <div class="hero__slide swiper-slide">
-                                    <img
-                                        src="./images/slider/img-4.jpg"
-                                        alt=""
-                                    />
+                                    <img src="./images/slider/img-4.jpg" alt="">
                                 </div>
                                 <div class="hero__slide swiper-slide">
-                                    <img
-                                        src="./images/slider/img-5.jpg"
-                                        alt=""
-                                    />
+                                    <img src="./images/slider/img-5.jpg" alt="">
                                 </div>
                             </div>
                             <div class="hero__slider-pagination"></div>
                             <div class="hero__slider-prev hero__slider-nav">
-                                <img
-                                    src="./images/icons/arrow-prev.svg"
-                                    alt=""
-                                />
+                                <img src="./images/icons/arrow-prev.svg" alt="">
                             </div>
                             <div class="hero__slider-next hero__slider-nav">
-                                <img
-                                    src="./images/icons/arrow-next.svg"
-                                    alt=""
-                                />
+                                <img src="./images/icons/arrow-next.svg" alt="">
                             </div>
                         </div>
                     </div>
@@ -172,9 +137,7 @@
                     </div>
                     <div data-tabs class="service__tabs">
                         <nav data-tabs-titles class="tabs__navigation">
-                            <div
-                                class="tabs__title _tab-active background background--1"
-                            >
+                            <div class="tabs__title _tab-active background background--1">
                                 <span>Отделочные работы</span>
                             </div>
                             <div class="tabs__title background background--2">
@@ -264,65 +227,41 @@
             <!--Services end-->
             <!--Connection-->
             <section class="connection">
-                <div class="connection__container connection__container--top">
-                    <form action="#" class="connection__form form">
-                        <fieldset>
-                            <legend class="form__title">ЗАПОЛНИТЕ ФОРМУ</legend>
-                            <div class="form__field">
-                                <input
-                                    autocomplete="off"
-                                    type="text"
-                                    name="form[]"
-                                    data-error="Ошибка"
-                                    placeholder="Ваше имя"
-                                    class="form__input"
-                                />
-                            </div>
-                            <div class="form__field">
-                                <input
-                                    autocomplete="off"
-                                    type="text"
-                                    name="form[]"
-                                    data-error="Ошибка"
-                                    placeholder="Номер телефона"
-                                    class="form__input"
-                                />
-                            </div>
-                            <div class="form__field">
-                                <label
-                                    class="form__label form__label--textarea"
-                                    for="textarea"
-                                    >Опишите Вашу заявку</label
-                                >
-                                <textarea
-                                    name=""
-                                    id="textarea"
-                                    class="form__textarea"
-                                ></textarea>
-                            </div>
-                            <button class="button form__button">
-                                Получить консультацию
-                            </button>
-                            <div class="form__field form__field--checkbox">
-                                <input
-                                    id="checkbox"
-                                    autocomplete="off"
-                                    type="checkbox"
-                                    name="form[]"
-                                    data-error="Ошибка"
-                                    class="form__checkbox"
-                                    checked
-                                />
-                                <label
-                                    class="form__label form__label--checkbox"
-                                    for="checkbox"
-                                    >Принимаю условия Политики
-                                    конфединциальности</label
-                                >
-                            </div>
-                        </fieldset>
-                    </form>
+                <div class="connection__wrapper">
+                    <div class="connection__container connection__container--top">
+                        <form action="#" class="connection__form form">
+                            <fieldset>
+                                <h3 class="form__title">ЗАПОЛНИТЕ ФОРМУ</h3>
+                                <div class="form__field">
+                                    <input autocomplete="off" type="text" name="form[]" data-error="Ошибка"
+                                        placeholder="Ваше имя" class="form__input">
+                                </div>
+                                <div class="form__field">
+                                    <input autocomplete="off" type="text" name="form[]" data-error="Ошибка"
+                                        placeholder="Номер телефона" class="form__input">
+                                </div>
+                                <div class="form__field">
+                                    <label class="form__label form__label--textarea" for="textarea1">Опишите Вашу
+                                        заявку</label>
+                                    <textarea name="form[]" id="textarea1" class="form__textarea"></textarea>
+                                </div>
+                                <button class="button form__button">
+                                    Получить консультацию
+                                </button>
+                                <div class="form__field form__field--checkbox">
+                                    <input id="checkbox1" type="checkbox" name="form[]" data-error="Ошибка"
+                                        class="form__checkbox" checked>
+                                    <label class="form__label form__label--checkbox" for="checkbox1">Принимаю условия
+                                        Политики
+                                        конфединциальности</label>
+                                </div>
+                            </fieldset>
+                        </form>
+                        <div class="connection__image"></div>
+                    </div>
                 </div>
+
+
             </section>
             <!--Connection end-->
             <!--About-->
@@ -351,9 +290,7 @@
                             <div class="about__slide swiper-slide">
                                 <div class="about__slide-item">
                                     <p class="about__slide-item__text">более</p>
-                                    <span class="about__slide-item__num"
-                                        >15</span
-                                    >
+                                    <span class="about__slide-item__num">15</span>
                                     <p class="about__slide-item__text">
                                         лет успешной работы
                                     </p>
@@ -362,9 +299,7 @@
                             <div class="about__slide swiper-slide">
                                 <div class="about__slide-item">
                                     <p class="about__slide-item__text">более</p>
-                                    <span class="about__slide-item__num"
-                                        >1000</span
-                                    >
+                                    <span class="about__slide-item__num">1000</span>
                                     <p class="about__slide-item__text">
                                         м2 готовых объектов
                                     </p>
@@ -373,9 +308,7 @@
                             <div class="about__slide swiper-slide">
                                 <div class="about__slide-item">
                                     <p class="about__slide-item__text">более</p>
-                                    <span class="about__slide-item__num"
-                                        >500</span
-                                    >
+                                    <span class="about__slide-item__num">500</span>
                                     <p class="about__slide-item__text">
                                         довольных клиентов
                                     </p>
@@ -395,37 +328,37 @@
                     <div class="gallery__items">
                         <div class="gallery__item">
                             <div class="gallery__item-img">
-                                <img src="./images/gallery/img-1.jpg" alt="" />
+                                <img src="./images/gallery/img-1.jpg" alt="">
                             </div>
                             <div class="gallery__item-bottom">ПЛИТКА</div>
                         </div>
                         <div class="gallery__item">
                             <div class="gallery__item-img">
-                                <img src="./images/gallery/img-2.jpg" alt="" />
+                                <img src="./images/gallery/img-2.jpg" alt="">
                             </div>
                             <div class="gallery__item-bottom">КЛАДКА</div>
                         </div>
                         <div class="gallery__item">
                             <div class="gallery__item-img">
-                                <img src="./images/gallery/img-3.jpg" alt="" />
+                                <img src="./images/gallery/img-3.jpg" alt="">
                             </div>
                             <div class="gallery__item-bottom">ОТДЕЛКА</div>
                         </div>
                         <div class="gallery__item">
                             <div class="gallery__item-img">
-                                <img src="./images/gallery/img-4.jpg" alt="" />
+                                <img src="./images/gallery/img-4.jpg" alt="">
                             </div>
                             <div class="gallery__item-bottom">КРОВЛЯ</div>
                         </div>
                         <div class="gallery__item">
                             <div class="gallery__item-img">
-                                <img src="./images/gallery/img-5.jpg" alt="" />
+                                <img src="./images/gallery/img-5.jpg" alt="">
                             </div>
                             <div class="gallery__item-bottom">САНТЕХНИКА</div>
                         </div>
                         <div class="gallery__item">
                             <div class="gallery__item-img">
-                                <img src="./images/gallery/img-6.jpg" alt="" />
+                                <img src="./images/gallery/img-6.jpg" alt="">
                             </div>
                             <div class="gallery__item-bottom">ЭЛЕКТРИКА</div>
                         </div>
@@ -439,10 +372,7 @@
                     <h2 class="section__title">ПРАЙС-ЛИСТ НА УСЛУГИ</h2>
                     <div data-tabs class="price-tabs">
                         <nav data-tabs-titles class="price-tabs__navigation">
-                            <button
-                                type="button"
-                                class="price-tabs__title _tab-active"
-                            >
+                            <button type="button" class="price-tabs__title _tab-active">
                                 Отделка
                             </button>
                             <button type="button" class="price-tabs__title">
@@ -676,7 +606,6 @@
                                             <td>Wheeler</td>
                                             <td>99134</td>
                                         </tr>
-
                                         <tr>
                                             <td>Zena</td>
                                             <td>Hale</td>
@@ -765,7 +694,6 @@
                                             <td>Wheeler</td>
                                             <td>99134</td>
                                         </tr>
-
                                         <tr>
                                             <td>Zena</td>
                                             <td>Hale</td>
@@ -817,68 +745,40 @@
                 <h2 class="section__title">
                     СВЯЖИТЕСЬ С НАМИ ИЛИ ОСТАВЬТЕ ЗАЯВКУ
                 </h2>
-
-                <div
-                    class="connection__container connection__container--bottom"
-                >
-                    <form action="#" class="connection__form form">
-                        <fieldset>
-                            <legend class="form__title">ЗАПОЛНИТЕ ФОРМУ</legend>
-                            <div class="form__field">
-                                <input
-                                    autocomplete="off"
-                                    type="text"
-                                    name="form[]"
-                                    data-error="Ошибка"
-                                    placeholder="Ваше имя"
-                                    class="form__input"
-                                />
-                            </div>
-                            <div class="form__field">
-                                <input
-                                    autocomplete="off"
-                                    type="text"
-                                    name="form[]"
-                                    data-error="Ошибка"
-                                    placeholder="Номер телефона"
-                                    class="form__input"
-                                />
-                            </div>
-                            <div class="form__field">
-                                <label
-                                    class="form__label form__label--textarea"
-                                    for="textarea"
-                                    >Опишите Вашу заявку</label
-                                >
-                                <textarea
-                                    name=""
-                                    id="textarea"
-                                    class="form__textarea"
-                                ></textarea>
-                            </div>
-                            <button class="button form__button">
-                                Получить консультацию
-                            </button>
-                            <div class="form__field form__field--checkbox">
-                                <input
-                                    id="checkbox"
-                                    autocomplete="off"
-                                    type="checkbox"
-                                    name="form[]"
-                                    data-error="Ошибка"
-                                    class="form__checkbox"
-                                    checked
-                                />
-                                <label
-                                    class="form__label form__label--checkbox"
-                                    for="checkbox"
-                                    >Принимаю условия Политики
-                                    конфединциальности</label
-                                >
-                            </div>
-                        </fieldset>
-                    </form>
+                <div class="connection__wrapper">
+                    <div class="connection__container connection__container--bottom">
+                        <form action="#" class="connection__form form">
+                            <fieldset>
+                                <legend class="form__title">ЗАПОЛНИТЕ ФОРМУ</legend>
+                                <div class="form__field">
+                                    <input autocomplete="off" type="text" name="form[]" data-error="Ошибка"
+                                        placeholder="Ваше имя" class="form__input">
+                                </div>
+                                <div class="form__field">
+                                    <input autocomplete="off" type="text" name="form[]" data-error="Ошибка"
+                                        placeholder="Номер телефона" class="form__input">
+                                </div>
+                                <div class="form__field">
+                                    <label class="form__label form__label--textarea" for="textarea">Опишите Вашу
+                                        заявку</label>
+                                    <textarea name="form[]" id="textarea" class="form__textarea"></textarea>
+                                </div>
+                                <button class="button form__button">
+                                    Получить консультацию
+                                </button>
+                                <div class="form__field form__field--checkbox">
+                                    <input id="checkbox" type="checkbox" name="form[]" data-error="Ошибка"
+                                        class="form__checkbox" checked>
+                                    <label class="form__label form__label--checkbox" for="checkbox">Принимаю условия
+                                        Политики
+                                        конфединциальности</label>
+                                </div>
+                            </fieldset>
+                        </form>
+                        <div class="connection__image"></div>
+                    </div>
                 </div>
+
             </section>
             <!--Connection2 end-->
             <!--Footer-->
@@ -886,16 +786,9 @@
                 <div class="footer__container">
                     <div class="footer__main">
                         <div class="footer__main-left">
-                            <a
-                                href="tel:+375291234567"
-                                class="footer__item footer__item--background"
-                                >+ 375-29-123-45-67</a
-                            >
-                            <a
-                                href="mailto:stroyka@gmail.com"
-                                class="footer__item footer__item--blank"
-                                >stroyka@gmail.com</a
-                            >
+                            <a href="tel:+375291234567" class="footer__item footer__item--phone">+ 375-29-123-45-67</a>
+                            <a href="mailto:stroyka@gmail.com"
+                                class="footer__item footer__item--blank">stroyka@gmail.com</a>
                         </div>
                         <div class="footer__main-right">
                             <p class="footer__item">ИП Иванов</p>
@@ -910,8 +803,12 @@
             </footer>
             <!--Footer end-->
         </div>
+    </div>
 
-        <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-        <script src="dist/script.min.js"></script>
-    </body>
+    <script src="scripts/smoothScroll.js"></script>
+    <script src="scripts/functions.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="dist/script.min.js"></script>
+</body>
+
 </html>

@@ -13,7 +13,21 @@
             }
         }
     }
-    .service {
+    .about {
+        &__container {
+            @include adaptiveValue("gap", 100, 50);
+        }
+    }
+    .gallery {
+        &__item {
+            &-bottom {
+                @include adaptiveValue("font-size", 24, 16);
+                @include adaptiveValue("height", 70, 50);
+            }
+        }
+        &__items {
+            @include adaptiveValue("margin-top", 93, 40);
+        }
     }
 }
 
@@ -28,14 +42,116 @@
         &__tabs {
             @include adaptiveValue("height", 750, 450);
         }
-        &__text {
-            @include adaptiveValue("margin-top", 75, 40);
-        }
         &__banner {
             @include adaptiveValue("margin-top", 51, 25);
         }
+        .tabs {
+            &__navigation {
+                max-width: 300px;
+            }
+            &__body {
+                &-list {
+                    height: 400px;
+                    gap: 10px;
+                    padding: 0 20px;
+                }
+                &-item {
+                    @include adaptiveValue("font-size", 18, 12);
+                }
+            }
+        }
+    }
+    .about {
+        &__main {
+            flex: 0 0 400px;
+        }
+        &__title {
+            @include adaptiveValue("font-size", 70, 40);
+            @include adaptiveValue("margin-bottom", 48, 20);
+        }
+        &__list {
+            @include adaptiveValue("gap", 20, 10);
+        }
+        &__item {
+            @include adaptiveValue("font-size", 20, 12);
+        }
+        &__slide {
+            &-item {
+                @include adaptiveValue("width", 320, 240);
+                @include adaptiveValue("height", 320, 240);
+                &__num {
+                    @include adaptiveValue("font-size", 100, 70);
+                }
+                &__text {
+                    @include adaptiveValue("font-size", 18, 14);
+                }
+            }
+        }
+    }
+    .price {
+        @include adaptiveValue("padding-top", 55, 30);
+        @include adaptiveValue("padding-bottom", 55, 30);
+        &-tabs {
+            @include adaptiveValue("margin-top", 70, 30);
+            &__title {
+                @include adaptiveValue("font-size", 20, 14);
+            }
+        }
+    }
+    .connection {
+        @include adaptiveValue("margin-bottom", 128, 50);
+        &__container {
+            @include adaptiveValue("height", 600, 520);
+            display: flex;
+            justify-content: center;
+        }
+        &__image {
+            display: none;
+        }
+        &__form {
+            @include adaptiveValue("width", 500, 320);
+            max-width: none;
+            margin: 0;
+        }
     }
 }
+
+@media (max-width: $mobile) {
+    .header {
+        padding: 5px 0;
+        &__contact {
+            font-size: 10px;
+        }
+    }
+    .work {
+        &__items {
+            grid-template-columns: repeat(1, 1fr);
+            justify-content: center;
+            padding: 0;
+        }
+        &__item {
+            padding-left: 70px;
+        }
+    }
+    .about {
+        padding: 30px 0px 30px 0px;
+        &__container {
+            flex-direction: column;
+        }
+        &__main {
+            flex: 0 0 350px;
+        }
+        &__slider {
+            width: 100%;
+        }
+    }
+    .gallery {
+        &__items {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}
+
 @media (max-width: em(900)) {
     .hero {
         &__container {
@@ -56,30 +172,17 @@
         }
     }
 }
-@media (max-width: $mobile) {
-    .header {
-        padding: 5px 0;
-        &__contact {
-            font-size: 10px;
-        }
-    }
-    .work {
-        &__items {
-            grid-template-columns: repeat(1, 1fr);
-            justify-content: center;
-            padding: 0;
-        }
-        &__item {
-            padding-left: 70px;
-        }
-    }
-}
-@media (max-width: em(600)) {
+
+@media (max-width: em(700)) {
     .service {
+        padding: 40px 0;
         &__tabs {
             @include adaptiveValue("padding-right", 40, 0);
             @include adaptiveValue("padding-left", 40, 0);
             flex-direction: column;
+            height: auto;
+            margin-top: 28px;
+            margin-bottom: 28px;
         }
         .tabs {
             &__navigation {
@@ -89,6 +192,48 @@
                 height: 100%;
                 min-width: 100%;
             }
+            &__title {
+                min-height: 70px;
+                span {
+                    max-width: 100%;
+                }
+            }
+            &__body {
+                &-title {
+                    @include adaptiveValue("font-size", 24, 18);
+                }
+                &-list {
+                    margin-top: 20px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: em(550)) {
+    .gallery {
+        &__items {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+    .price {
+        &-tabs {
+            display: none;
+        }
+        &__button {
+            margin-top: 30px;
+            max-width: 100%;
+            button {
+                width: 100%;
+            }
+        }
+    }
+    .footer {
+        &__main {
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 16px;
         }
     }
 }

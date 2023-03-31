@@ -3,12 +3,18 @@
     border: 2px solid #ff7a00;
     border-radius: 15px;
     padding: 25px 52px;
+    @media (max-width: $mobile) {
+        padding: 20px;
+    }
     &__title {
         font-size: 22px;
         line-height: 27px;
         letter-spacing: 0.05em;
         margin-bottom: 23px;
         text-align: center;
+        @media (max-width: $mobile) {
+            @include adaptiveValue("font-size", 22, 15);
+        }
     }
 
     &__field {
