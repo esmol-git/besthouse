@@ -1,12 +1,13 @@
-let bodyLockStatus = true
-let bodyLockToggle = (delay = 500) => {
+// Вспомогательные модули блокировки прокрутки и скочка
+export let bodyLockStatus = true
+export let bodyLockToggle = (delay = 500) => {
     if (document.documentElement.classList.contains('lock')) {
         bodyUnlock(delay)
     } else {
         bodyLock(delay)
     }
 }
-let bodyUnlock = (delay = 500) => {
+export let bodyUnlock = (delay = 500) => {
     let body = document.querySelector('body')
     if (bodyLockStatus) {
         let lock_padding = document.querySelectorAll('[data-lp]')
@@ -24,7 +25,7 @@ let bodyUnlock = (delay = 500) => {
         }, delay)
     }
 }
-let bodyLock = (delay = 500) => {
+export let bodyLock = (delay = 500) => {
     let body = document.querySelector('body')
     if (bodyLockStatus) {
         let lock_padding = document.querySelectorAll('[data-lp]')
@@ -47,65 +48,90 @@ let bodyLock = (delay = 500) => {
         }, delay)
     }
 }
-function addLoadedClass() {
+export function dataMediaQueries(array, dataSetValue) {
+    // Получение объектов с медиа запросами
+    const media = Array.from(array).filter(function (item, index, self) {
+        if (item.dataset[dataSetValue]) {
+            return item.dataset[dataSetValue].split(',')[0]
+        }
+    })
+    // Инициализация объектов с медиа запросами
+    if (media.length) {
+        const breakpointsArray = []
+        media.forEach((item) => {
+            const params = item.dataset[dataSetValue]
+            const breakpoint = {}
+            const paramsArray = params.split(',')
+            breakpoint.value = paramsArray[0]
+            breakpoint.type = paramsArray[1] ? paramsArray[1].trim() : 'max'
+            breakpoint.item = item
+            breakpointsArray.push(breakpoint)
+        })
+        // Получаем уникальные брейкпоинты
+        let mdQueries = breakpointsArray.map(function (item) {
+            return (
+                '(' +
+                item.type +
+                '-width: ' +
+                item.value +
+                'px),' +
+                item.value +
+                ',' +
+                item.type
+            )
+        })
+        mdQueries = uniqArray(mdQueries)
+        const mdQueriesArray = []
+
+        if (mdQueries.length) {
+            // Работаем с каждым брейкпоинтом
+            mdQueries.forEach((breakpoint) => {
+                const paramsArray = breakpoint.split(',')
+                const mediaBreakpoint = paramsArray[1]
+                const mediaType = paramsArray[2]
+                const matchMedia = window.matchMedia(paramsArray[0])
+                // Объекты с нужными условиями
+                const itemsArray = breakpointsArray.filter(function (item) {
+                    if (
+                        item.value === mediaBreakpoint &&
+                        item.type === mediaType
+                    ) {
+                        return true
+                    }
+                })
+                mdQueriesArray.push({
+                    itemsArray,
+                    matchMedia,
+                })
+            })
+            return mdQueriesArray
+        }
+    }
+}
+export function currentYear() {
+    document.querySelector('#currentYear').innerHTML = new Date().getFullYear()
+}
+export function addLoadedClass() {
+    bodyLock()
     window.addEventListener('load', function () {
         setTimeout(function () {
             document.documentElement.classList.add('loaded')
-        }, 0)
+            bodyUnlock()
+        }, 1500)
     })
 }
-function headerScroll() {
-    addWindowScrollEvent = true
-    const header = document.querySelector('header.header')
-    console.log(header)
-    const headerShow = header.hasAttribute('data-scroll-show')
-    const headerShowTimer = header.dataset.scrollShow
-        ? header.dataset.scrollShow
-        : 500
-    const startPoint = header.dataset.scroll ? header.dataset.scroll : 1
-    console.log(startPoint)
-    let scrollDirection = 0
-    let timer
-    document.addEventListener('windowScroll', function (e) {
-        const scrollTop = window.scrollY
-        console.log(scrollTop, scrollDirection, 'kkkk')
-        clearTimeout(timer)
-        if (scrollTop >= startPoint) {
-            !header.classList.contains('_header-scroll')
-                ? header.classList.add('_header-scroll')
-                : null
-            if (headerShow) {
-                if (scrollTop > scrollDirection) {
-                    // downscroll code
-                    header.classList.contains('_header-show')
-                        ? header.classList.remove('_header-show')
-                        : null
-                } else {
-                    // upscroll code
-                    !header.classList.contains('_header-show')
-                        ? header.classList.add('_header-show')
-                        : null
-                }
-                timer = setTimeout(() => {
-                    !header.classList.contains('_header-show')
-                        ? header.classList.add('_header-show')
-                        : null
-                }, headerShowTimer)
-            }
-        } else {
-            header.classList.contains('_header-scroll')
-                ? header.classList.remove('_header-scroll')
-                : null
-            if (headerShow) {
-                header.classList.contains('_header-show')
-                    ? header.classList.remove('_header-show')
-                    : null
-            }
-        }
-        scrollDirection = scrollTop <= 0 ? 0 : scrollTop
+
+export function getHash() {
+    if (location.hash) {
+        return location.hash.replace('#', '')
+    }
+}
+export function uniqArray(array) {
+    return array.filter(function (item, index, self) {
+        return self.indexOf(item) === index
     })
 }
-function menuInit() {
+export function menuInit() {
     if (document.querySelector('.icon-menu')) {
         document.addEventListener('click', function (e) {
             if (bodyLockStatus && e.target.closest('.icon-menu')) {
@@ -116,22 +142,11 @@ function menuInit() {
     }
 }
 
-function menuOpen() {
+export function menuOpen() {
     bodyLock()
     document.documentElement.classList.add('menu-open')
 }
-function menuClose() {
+export function menuClose() {
     bodyUnlock()
     document.documentElement.classList.remove('menu-open')
 }
-setTimeout(() => {
-    if (addWindowScrollEvent) {
-        let windowScroll = new Event('windowScroll')
-        window.addEventListener('scroll', function (e) {
-            document.dispatchEvent(windowScroll)
-        })
-    }
-}, 0)
-addLoadedClass()
-headerScroll()
-menuInit()

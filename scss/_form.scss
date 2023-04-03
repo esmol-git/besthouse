@@ -3,6 +3,13 @@
     border: 2px solid #ff7a00;
     border-radius: 15px;
     padding: 25px 52px;
+    transform: translate(-100%, 0);
+    transition: 0.8s ease 0s;
+    opacity: 0;
+    &._watcher-view {
+        transform: translate(0);
+        opacity: 1;
+    }
     @media (max-width: $mobile) {
         padding: 20px;
     }

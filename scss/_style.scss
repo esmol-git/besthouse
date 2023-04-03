@@ -9,6 +9,14 @@ body {
         overflow: hidden;
         touch-action: none;
     }
+    .loaded & {
+        .spinner {
+            display: none;
+        }
+    }
+}
+.site {
+    position: relative;
 }
 .section {
     &__title {
@@ -17,6 +25,14 @@ body {
         line-height: 37px;
         text-transform: uppercase;
         text-align: center;
+        transform: translate(0, -80px);
+        transition: 0.8s ease 0s;
+        opacity: 0;
+
+        &._watcher-view {
+            transform: translate(0);
+            opacity: 1;
+        }
         &--lines {
             position: relative;
             &::after,

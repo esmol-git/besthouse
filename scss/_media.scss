@@ -1,5 +1,6 @@
 @media (max-width: $pc) {
     .hero {
+        @include adaptiveValue("margin-top", 150, 70);
         @include adaptiveValue("margin-bottom", 96, 24);
         &__title {
             @include adaptiveValue("font-size", 60, 34);
@@ -11,6 +12,11 @@
             &:after {
                 @include adaptiveValue("right", -10, -850);
             }
+        }
+    }
+    .header {
+        &__logo {
+            @include adaptiveValue("width", 186, 80);
         }
     }
     .about {
@@ -32,8 +38,32 @@
 }
 
 @media (max-width: $tablet) {
-    .nav {
-        display: none;
+    .menu {
+        position: absolute;
+        left: 0;
+        top: 0;
+        transform: translateY(-100%);
+        transition: 0.3s ease 0s;
+
+        &__body {
+            background-color: $black;
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        &__list {
+            flex-direction: column;
+        }
+        &__link {
+            @include adaptiveValue("font-size", 32, 18);
+        }
+    }
+    .menu-open {
+        .menu {
+            transform: translateY(0);
+        }
     }
     .burger {
         display: block;
