@@ -1,3 +1,5 @@
+import './script.js'
+import './smoothScroll.js'
 import './pageNavigation.js'
 import './popup.js'
 import './scrollWatcher.js'
